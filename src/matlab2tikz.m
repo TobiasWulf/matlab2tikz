@@ -2173,7 +2173,7 @@ function [tikzMarkerSize, isDefault] = ...
     switch (matlabMarker)
         case 'none'
             tikzMarkerSize = [];
-        case {'+','o','x','*','p','pentagram','h','hexagram'}
+        case {'+','o','x','*','p','_','pentagram','h','hexagram'}
             % In MATLAB, the marker size refers to the edge length of a
             % square (for example) (~diameter), whereas in TikZ the
             % distance of an edge to the center is the measure (~radius).
@@ -2220,6 +2220,8 @@ function [tikzMarker, markOptions] = ...
     switch (matlabMarker)
         case 'none'
             tikzMarker = '';
+        case '_'
+            tikzMarker = '-';
         case '+'
             tikzMarker = '+';
         case 'o'
